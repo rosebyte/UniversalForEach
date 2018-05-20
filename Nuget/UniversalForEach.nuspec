@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>RoseByte.UniversalForEach</id>
+    <version>1.0.0</version>
+    <title>UniversalForEach</title>
+    <authors>Jaroslav Ruzicka</authors>
+    <owners>Jaroslav Ruzicka</owners>
+    <licenseUrl>https://github.com/rosebyte/UniversalForEach/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rosebyte/UniversalForEach/tree/master/adosession</projectUrl>
+    <iconUrl>https://png.icons8.com/ios/50/000000/sprint-iteration.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>IEnumerable ForEach extension methods.</description>
+    <releaseNotes>Initial package with first beta version.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>foreach IEnumerable</tags>
+  </metadata>
+  <files>
+    <file src="..\UniversalForEach\bin\Release\RoseByte.UniversalForEach.dll" target="lib\net40\" />
+  </files>
+</package>
