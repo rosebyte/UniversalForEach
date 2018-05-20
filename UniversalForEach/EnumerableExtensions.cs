@@ -7,6 +7,12 @@ namespace System.Collections.Generic
 {
     public static class EnumerableExtensions
     {
+        /// <summary>
+        /// Performs action on each element.
+        /// </summary>
+        /// <param name="source">elements on </param>
+        /// <param name="action">action to be performed on elements</param>
+        /// <param name="threads">maximum threads used except main thread</param>
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action, int threads = 1)
         {
             if (threads == 1)
@@ -22,6 +28,13 @@ namespace System.Collections.Generic
             }
         }
         
+        /// <summary>
+        /// Performs action on each element.
+        /// </summary>
+        /// <param name="source">elements on </param>
+        /// <param name="action">action to be performed on elements</param>
+        /// <param name="ready">expression to be run on every element to verify it can be processed</param>
+        /// <param name="threads">maximum threads used except main thread</param>
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action, Func<T, bool> ready, int threads = 1)
         {
             var elements = source.ToList();
@@ -52,6 +65,13 @@ namespace System.Collections.Generic
             }
         }
         
+        /// <summary>
+        /// Performs action on each element.
+        /// </summary>
+        /// <param name="source">elements on </param>
+        /// <param name="action">action to be performed on elements</param>
+        /// <param name="depends">all elements returned by this expresion will be finished before given element</param>
+        /// <param name="threads">maximum threads used except main thread</param>
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action, Func<T, IEnumerable<T>> depends, 
             int threads = 1)
         {

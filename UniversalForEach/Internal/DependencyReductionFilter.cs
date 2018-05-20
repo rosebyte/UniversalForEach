@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Rosebyte.UniversalForEach.Internal
 {
-    public static class DependencyReductionFilter
+    internal static class DependencyReductionFilter
     {
         public static Dictionary<T, List<T>> Filter<T>(Dictionary<T, List<T>> tree)
         {

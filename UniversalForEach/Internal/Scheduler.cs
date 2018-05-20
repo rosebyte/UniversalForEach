@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rosebyte.UniversalForEach.Internal
 {
-    public class Scheduler<T>
+    internal class Scheduler<T>
 	{
 		private readonly BlockingCollection<T> _tasks = new BlockingCollection<T>();
 		private readonly ConcurrentDictionary<T, bool> _sheduled;
@@ -88,6 +88,11 @@ namespace Rosebyte.UniversalForEach.Internal
 			while (_exception == null && _sheduled.Any(x => !x.Value))
 			{
 				_sheduled.Where(x => !x.Value && _ready(x.Key)).ForEach(x => Enqueue(x.Key));
+				_wake.WaitOne();
+			}
+
+			while (_exception == null && _tasks.Any())
+			{
 				_wake.WaitOne();
 			}
 			

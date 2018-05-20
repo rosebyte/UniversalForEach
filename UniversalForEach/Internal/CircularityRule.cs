@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Rosebyte.UniversalForEach.Internal
 {
-    public static class CircularityRule
+    internal static class CircularityRule
     {
         public static void Test<T>(IEnumerable<T> elements, Func<T, IEnumerable<T>> depends)
         {

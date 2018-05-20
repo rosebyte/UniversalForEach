@@ -10,24 +10,19 @@ namespace RoseByte.UniversalForEach.Tests
     [TestFixture]
     public class EnumerableExtensionsTests
     {
-        private readonly List<string> _names = new List<string>
-        {
-	        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"
-        };
-	    
-		private const int Sleep = 100;
+        private const int Sleep = 100;
 	
 		private static int Difference(TestElement left, TestElement right)
 		{
 			return (right.Finished - left.Finished).Milliseconds;
 		}
 
-	    private List<TestElement> GetElements(int count)
+	    private static List<TestElement> GetElements(int count)
 	    {
-		    return _names.Take(count).Select(x => new TestElement(x)).ToList();
+		    return Enumerable.Range(1, count).Select(x => new TestElement()).ToList();
 	    }
 
-	    private void SleepAndSetTime(TestElement item)
+	    private static void SleepAndSetTime(TestElement item)
 	    {
 		    Thread.Sleep(Sleep); 
 		    item.Finished = DateTime.Now;
@@ -53,6 +48,7 @@ namespace RoseByte.UniversalForEach.Tests
 			
 			elements.ForEach(SleepAndSetTime, 12);
 			
+			Assert.That(elements.All(x => x.Finished != DateTime.MinValue));
 			Assert.That(Difference(elements.First(), elements.Last()), Is.LessThan(Sleep * elements.Count / 2));
 		}
 	    
@@ -63,6 +59,7 @@ namespace RoseByte.UniversalForEach.Tests
 			
 		    elements.ForEach(SleepAndSetTime, x => true, 4);
 			
+		    Assert.That(elements.All(x => x.Finished != DateTime.MinValue));
 		    Assert.That(Difference(elements.First(), elements.Last()), Is.LessThan(Sleep * elements.Count / 2));
 	    }
 

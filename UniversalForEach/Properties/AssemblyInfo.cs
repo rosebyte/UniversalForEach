@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1")]
 
-[assembly:InternalsVisibleTo("Rosebyte.UniversalForEach")]
+[assembly:InternalsVisibleTo("Rosebyte.UniversalForEach.Tests")]
 
 // Version information for an assembly consists of the following four values:
 //
