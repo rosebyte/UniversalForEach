@@ -4,11 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}</ProjectGuid>
+    <ProjectGuid>{482333C5-7B25-4853-9973-DE611791FF3C}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rosebyte.UniversalForEach</RootNamespace>
-    <AssemblyName>Rosebyte.UniversalForEach</AssemblyName>
+    <RootNamespace>RoseByte.UniversalForEach.Tests</RootNamespace>
+    <AssemblyName>RoseByte.UniversalForEach.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,14 +37,22 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="Internal\CircularityRule.cs" />
-    <Compile Include="Internal\DependencyReductionFilter.cs" />
-    <Compile Include="Internal\ReferenceException.cs" />
-    <Compile Include="Internal\Scheduler.cs" />
+    <Compile Include="Internal\CircularityRuleTests.cs" />
+    <Compile Include="Internal\DependencyReductionFilterTests.cs" />
+    <Compile Include="EnumerableExtensionsTests.cs" />
+    <Compile Include="Internal\TestElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UniversalForEach\UniversalForEach.csproj">
+      <Project>{c7909ef9-af4d-4fad-84e9-8bc3cbc0a1d1}</Project>
+      <Name>UniversalForEach</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

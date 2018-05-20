@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UniversalForEach")]
+[assembly: AssemblyTitle("UniversalForEach.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UniversalForEach")]
+[assembly: AssemblyProduct("UniversalForEach.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,9 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1")]
-
-[assembly:InternalsVisibleTo("Rosebyte.UniversalForEach")]
+[assembly: Guid("482333C5-7B25-4853-9973-DE611791FF3C")]
 
 // Version information for an assembly consists of the following four values:
 //

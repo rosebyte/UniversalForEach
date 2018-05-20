@@ -4,12 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.0.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalForEach", "UniversalForEach\UniversalForEach.csproj", "{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalForEach.Tests", "UniversalForEach.Tests\UniversalForEach.Tests.csproj", "{482333C5-7B25-4853-9973-DE611791FF3C}"
+EndProject
 Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7909EF9-AF4D-4FAD-84E9-8BC3CBC0A1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482333C5-7B25-4853-9973-DE611791FF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482333C5-7B25-4853-9973-DE611791FF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482333C5-7B25-4853-9973-DE611791FF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482333C5-7B25-4853-9973-DE611791FF3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

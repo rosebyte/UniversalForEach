@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Concurrent;
+using System.Linq;
 using System.Threading.Tasks;
-using UniversalForEach;
+using Rosebyte.UniversalForEach.Internal;
 
 namespace System.Collections.Generic
 {
@@ -47,8 +48,20 @@ namespace System.Collections.Generic
             }
             else
             {
-                new Scheduler<T>().Run(elements, action, ready, threads);
+                new Scheduler<T>(elements, action, ready, threads).Run();
             }
+        }
+        
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action, Func<T, IEnumerable<T>> depends, 
+            int threads = 1)
+        {
+            var tree = source.ToDictionary(x => x, x => depends(x).ToList());
+            CircularityRule.Test(tree);
+            tree = DependencyReductionFilter.Filter(tree);
+            
+            var elements = new ConcurrentDictionary<T, bool>(tree.Keys.ToDictionary(x => x, x => false));
+            
+            elements.Keys.ForEach(x => {action(x);elements[x] = true;}, x => tree[x].All(y => elements[y]), threads);
         }
     }
 }
